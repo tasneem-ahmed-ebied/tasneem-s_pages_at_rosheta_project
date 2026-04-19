@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+import '../../core/color_manager.dart';
+import '../../core/font_manager.dart';
+
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarWidget({
+    super.key, required this.title,
+  });
+final String title;
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: ColorManager.white,
+      elevation: 0,
+      centerTitle: true,
+
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back, color: Colors.black),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+
+      title: Text(
+       title,
+        style: TextStyle(
+          fontFamily: FontsManagers.interMedium,
+          color: Colors.black,
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+
+      actions: [
+        IconButton(
+          icon: Icon(Icons.shopping_cart_rounded, color: ColorManager.black),
+          onPressed: () {},
+        ),
+      ],
+    );
+  }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);}
