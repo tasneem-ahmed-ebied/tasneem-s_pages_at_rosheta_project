@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasneem_rosheta/core/padding_manager.dart';
 import 'package:tasneem_rosheta/model/main_components_model.dart';
 
 import '../../../core/color_manager.dart';
@@ -14,19 +15,25 @@ class CategoriesBoxDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          alignment: Alignment.center,
-          width: WidthManagers.w80,
-          height: HeightManager.h80,
-          decoration: BoxDecoration(
-              color: ColorManager.grey,
-              borderRadius: BorderRadius.circular(RadiusValuesManager.r15)
+        Padding(
+          padding:EdgeInsets.symmetric(horizontal: PaddingManager.p5),
+          child: Container(
+            alignment: Alignment.center,
+            width: WidthManagers.w65,
+            height: HeightManager.h60,
+            decoration: BoxDecoration(
+                color: ColorManager.white,
+                borderRadius: BorderRadius.circular(RadiusValuesManager.r15),
+              border: Border.all(
+                color: ColorManager.semiDarkGray
+              )
 
+            ),
+            child: Icon(model.icon,size: FontSizeManagers.f25,color: ColorManager.primary,),
           ),
-          child: Icon(model.icon,size: FontSizeManagers.f25,color: ColorManager.black,),
         ),
         SizedBox(height: HeightManager.h7,),
-        Text(model.title,style: TextStyle(color: ColorManager.black,fontSize: FontSizeManagers.f13,fontWeight: FontWeight.w400),)
+        Text(model.title,style: TextStyle(color: ColorManager.primary,fontSize: FontSizeManagers.f13,fontWeight: FontWeight.w400),)
       ],
     );
   }

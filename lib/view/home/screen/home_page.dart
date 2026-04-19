@@ -24,16 +24,19 @@ class HomePage extends StatelessWidget {
             SizedBox(height: HeightManager.h20,),
             TextFieldSearchHomePage(),
             SizedBox(height: HeightManager.h20,),
-            ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: ConstValueManager.listAllCategories.length,
-              separatorBuilder: (context, index) => SizedBox(width: WidthManagers.w20),
-              itemBuilder: (context, index) {
-                return CategoriesBoxDesign(
-                  model: ConstValueManager.listAllCategories[index],
-                );
-              },
+            SizedBox(
+              height: HeightManager.h100,
+              child: ListView.separated(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: ConstValueManager.listAllCategories.length,
+                separatorBuilder: (context, index) => SizedBox(width: WidthManagers.w20),
+                itemBuilder: (context, index) {
+                  return CategoriesBoxDesign(
+                    model: ConstValueManager.listAllCategories[index],
+                  );
+                },
+              ),
             ),
             SizedBox(height: HeightManager.h15,),
             Image.asset(AssetsValuesManager.viewCategory,)
