@@ -5,9 +5,10 @@ import '../../core/font_manager.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({
-    super.key, required this.title,
+    super.key, required this.title, this.icon,
   });
 final String title;
+final IconData? icon;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -34,7 +35,7 @@ final String title;
 
       actions: [
         IconButton(
-          icon: Icon(Icons.shopping_cart_rounded, color: ColorManager.black),
+          icon: Icon(icon,color: ColorManager.black,),
           onPressed: () {},
         ),
       ],

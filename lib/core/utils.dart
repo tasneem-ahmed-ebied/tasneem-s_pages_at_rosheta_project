@@ -11,4 +11,5 @@ class Utils{
   static const String donates = "Donates";
   static const String efforts = "Efforts";
   static const String doctors = "Doctors";
+  static const String popularProduct = "Popular Product";
 }
