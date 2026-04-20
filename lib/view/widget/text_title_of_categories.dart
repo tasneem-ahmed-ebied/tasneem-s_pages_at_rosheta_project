@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+import '../../core/color_manager.dart';
+import '../../core/font_manager.dart';
+import '../../core/utils.dart';
+
+class TextTitleOfCategories extends StatelessWidget {
+  const TextTitleOfCategories({
+    super.key, required this.title,
+  });
+final String title;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+        title,
+        style: TextStyle(
+          color: ColorManager.black,
+          fontWeight: FontWeight.bold,
+          fontSize: FontSizeManagers.f20,
+        ),
+      ),
+        InkWell(
+          onTap: () {
+            //todo to category page
+          },
+          child: Text(
+          Utils.seeAll,
+          style: TextStyle(
+            color: ColorManager.primary,
+            fontWeight: FontWeight.bold,
+            fontSize: FontSizeManagers.f15,
+          ),
+                ),
+        ),
+      ],
+    );
+  }
+}
