@@ -17,6 +17,7 @@ class Utils{
   static const String popularProduct = "Popular Product";
   static const String productOnSale = "Product on Sale";
   static const String seeAll = "See All";
+  static const String topDoctors = "Top Doctors";
   ////////////////////////////
   static const String panadol = "Panadol";
   static const String bodrexHerbal = "Bodrex Herbal";
@@ -34,4 +35,5 @@ class Utils{
   static final String $10x99Before = "\$10.99";
   static const String $8x99Before = "\$8.99";
   static const String $7x99Before = "\$7.99";
+  ///////////////////////////////////
 }
