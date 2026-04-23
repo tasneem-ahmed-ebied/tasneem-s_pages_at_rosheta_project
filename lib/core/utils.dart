@@ -9,6 +9,8 @@ class Utils {
   /////////////////////////////////
   static const String home = "Home";
   static const String details = "Details";
+  static const String myCart = "My Cart";
+  static const String paymentDetails = "Payment Detail";
 
   ///////////////////////////////////
   static const String search = "search";

@@ -17,7 +17,7 @@ class ListViewOfProductsOnSaleWidget extends StatelessWidget {
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: ConstValueManager.listPopularProductSales.length,
+        itemCount: ConstValueManager.listProductsOnSale.length,
         separatorBuilder: (context, index) => SizedBox(width: WidthManagers.w20),
         itemBuilder: (context, index) {
           return ListViewDesignOfProductsOnSale(

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:tasneem_rosheta/core/icons_size_manager.dart';
 
 import '../../../controller/count_controller.dart';
 import '../../../core/color_manager.dart';
@@ -17,6 +18,8 @@ class PriceOfMedicineAndCounter extends StatelessWidget {
       children: [
         CounterControl(
           initialValue: 1,
+          iconSize: IconSizeManager.i50,
+          numberSize: FontSizeManagers.f30,
           onChanged: (value) {
             //*the value will change
           },

@@ -7,8 +7,9 @@ import 'package:tasneem_rosheta/core/width_manager.dart';
 class CounterControl extends StatefulWidget {
   final int initialValue;
   final Function(int)? onChanged;
-
-  const CounterControl({super.key, this.initialValue = 0, this.onChanged});
+  final double iconSize;
+  final double numberSize;
+  const CounterControl({super.key, this.initialValue = 0, this.onChanged, required this.iconSize, required this.numberSize});
 
   @override
   _CounterControlState createState() => _CounterControlState();
@@ -46,10 +47,10 @@ class _CounterControlState extends State<CounterControl> {
       children: [
         IconButton(
           onPressed: decrement,
-          icon: Icon(Icons.remove, size: IconSizeManager.i50),
+          icon: Icon(Icons.remove, size: widget.iconSize),
         ),
 
-        Text('$count', style: TextStyle(fontSize: FontSizeManagers.f30,fontWeight: FontWeight.bold)),
+        Text('$count', style: TextStyle(fontSize: widget.numberSize,fontWeight: FontWeight.bold)),
 
         SizedBox(width: WidthManagers.w8),
         InkWell(
@@ -59,7 +60,7 @@ class _CounterControlState extends State<CounterControl> {
           child: Icon(
             Icons.add_box_rounded,
             color: ColorManager.primary,
-            size: IconSizeManager.i50,
+            size: widget.iconSize,
           ),
         ),
       ],

@@ -7,6 +7,7 @@ import 'package:tasneem_rosheta/model/popular_products_model.dart';
 import 'package:tasneem_rosheta/model/product_on_sale_model.dart';
 import 'package:tasneem_rosheta/model/recent_doctors_model.dart';
 
+import '../model/medicine_cart_model.dart';
 import '../model/top_doctors_model.dart';
 import 'navigation/app_navigation.dart';
 
@@ -159,4 +160,10 @@ class ConstValueManager {
       route: RouteName.detailsPage
   ),
   ];
+
+  //////////////////////////////////////////////////
+static List<MedicineCartModel> listMedicineCartModel = [
+MedicineCartModel(medicineImage: AssetsValuesManager.bodrexHerbalImage, medicineName: Utils.bodrexHerbal, medicinePieces: Utils.x75ml, medicinePrice:Utils.$7x99, ),
+MedicineCartModel(medicineImage: AssetsValuesManager.panadolImage, medicineName: Utils.panadol, medicinePieces: Utils.x20pcs, medicinePrice: Utils.$15x99)
+];
 }
