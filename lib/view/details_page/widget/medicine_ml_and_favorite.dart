@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+import '../../../core/color_manager.dart';
+import '../../../core/font_manager.dart';
+import '../../../core/icons_size_manager.dart';
+import '../../../core/utils.dart';
+
+class MedicineMlAndFavorite extends StatelessWidget {
+  const MedicineMlAndFavorite({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          Utils.x75ml,
+          style: TextStyle(
+            color: ColorManager.grey,
+            fontSize: FontSizeManagers.f18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Icon(Icons.favorite_border,color: ColorManager.primary,size: IconSizeManager.i30,)
+      ],
+    );
+  }
+}

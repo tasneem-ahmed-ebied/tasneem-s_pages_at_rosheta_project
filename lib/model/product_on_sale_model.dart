@@ -1,12 +1,14 @@
 import 'dart:ui';
 
+import '../core/route_manager.dart';
+
 class ProductOnSaleModel{
   final String medicineImage;
   final String medicineName;
   final String medicinePieces;
   final String medicinePrice;
   final String olderPrice;
-  final VoidCallback? onTap;
+  final RouteName route;
 
   ProductOnSaleModel({
     required this.medicineImage,
@@ -14,6 +16,6 @@ class ProductOnSaleModel{
     required this.medicinePieces,
     required this.medicinePrice,
     required this.olderPrice,
-    required this.onTap
+    required this.route
   });
 }

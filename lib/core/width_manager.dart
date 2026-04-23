@@ -47,4 +47,5 @@ class WidthManagers {
   static double w362 = 362.w;
   static double w366 = 366.w;
   static double w400 = 400.w;
+  static double w500 = 500.w;
 }

@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tasneem_rosheta/core/assets_manager.dart';
-import 'package:tasneem_rosheta/core/font_manager.dart';
-import 'package:tasneem_rosheta/core/icons_size_manager.dart';
 import 'package:tasneem_rosheta/core/padding_manager.dart';
-import 'package:tasneem_rosheta/core/radius_manager.dart';
-import 'package:tasneem_rosheta/core/width_manager.dart';
 import 'package:tasneem_rosheta/view/home/widget/product_on_sale_widgets/list_view_of_products_on_sale_widget.dart';
 import '../../../core/color_manager.dart';
 import '../../../core/height_manager.dart';
@@ -15,7 +10,6 @@ import '../../widget/text_title_of_categories.dart';
 import '../widget/advertisment_of_doctors.dart';
 import '../widget/advertisment_of_quick_orders.dart';
 import '../widget/list_view_main_components.dart';
-import '../widget/popular_product_widgets/list_view_design_of_popular_madicines.dart';
 import '../widget/popular_product_widgets/list_view_of_popular_medicines_widget.dart';
 import '../widget/recent_doctors_widget/list_view_of_recent_doctors_widget.dart';
 import '../widget/text_field_search_homepage_widget.dart';
@@ -36,7 +30,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: HorizontalPaddingManager.p10,
+            horizontal: HorizontalPaddingManager.p20,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

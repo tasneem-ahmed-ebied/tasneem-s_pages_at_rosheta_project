@@ -1,4 +1,5 @@
 class IconSizeManager{
+  IconSizeManager._();
   static const double i12=12;
   static const double i10=10;
   static const double i13=13;

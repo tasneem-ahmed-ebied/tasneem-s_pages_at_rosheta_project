@@ -1,18 +1,19 @@
 import 'dart:ui';
 
+import '../core/route_manager.dart';
+
 class TopDoctorsModel{
   final String doctorImage;
   final String doctorName;
   final String doctorSpecialty;
   final String doctorRate;
   final String doctorDistanceAway;
-  final VoidCallback? onTap;
+  final RouteName route;
   TopDoctorsModel({
     required this.doctorImage,
     required this.doctorName,
     required this.doctorSpecialty,
     required this.doctorRate,
     required this.doctorDistanceAway,
-    required this.onTap,
-});
+required this.route});
 }

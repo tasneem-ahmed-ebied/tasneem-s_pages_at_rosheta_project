@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/color_manager.dart';
+
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: ColorManager.white,
+      body: Column(),
+    );
   }
 }
