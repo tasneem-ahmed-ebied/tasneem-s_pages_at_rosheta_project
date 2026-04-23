@@ -9,6 +9,10 @@ class AdvertismentOfQuickOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(AssetsValuesManager.advertismentViewCategory,);
+    return InkWell(
+        onTap: () {
+          //todo category of medicines
+        },
+        child: Image.asset(AssetsValuesManager.advertismentViewCategory,));
   }
 }

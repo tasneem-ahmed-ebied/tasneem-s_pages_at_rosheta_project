@@ -13,6 +13,7 @@ class AssetsValuesManager{
   static const String doctorHorizoImage = "$_baseUrl/doctor_marcus_horizo_image.png";
   static const String doctorMariaImage = "$_baseUrl/doctor_maria_elena_image.png";
   static const String doctorSteviImage = "$_baseUrl/doctor_stevi_jessi_image.png";
+  static const String doctorLukeImage = "$_baseUrl/doctor_luke.png";
 
 
 

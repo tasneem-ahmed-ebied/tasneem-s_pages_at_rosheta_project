@@ -18,6 +18,7 @@ class Utils{
   static const String productOnSale = "Product on Sale";
   static const String seeAll = "See All";
   static const String topDoctors = "Top Doctors";
+  static const String yourRecentDoctors = "Your Recent Doctors";
   ////////////////////////////
   static const String panadol = "Panadol";
   static const String bodrexHerbal = "Bodrex Herbal";
@@ -36,4 +37,22 @@ class Utils{
   static const String $8x99Before = "\$8.99";
   static const String $7x99Before = "\$7.99";
   ///////////////////////////////////
+  static const String drMarcusHorizon = "Dr. Marcus Horizon";
+  static const String drMariaElena = "Dr. Maria Elena";
+  static const String drSteviJessi = "Dr. Stevi Jessi";
+  static const String drLuke = "Dr. Luke";
+  ///////////////////////////////////
+  static const String marcusSpecialty = "Chardiologist";
+  static const String mariaSpecialty = "Psychologist";
+  static const String steviSpecialty = "Orthopedist";
+  //////////////////////////////////
+  static const String marcusRate = "4,7";
+  static const String mariaRate = "4,9";
+  static const String steviRate = "4,8";
+  ////////////////////////////////////////
+  static const String marcusDistanceAway = "800m away";
+  static const String mariaDistanceAway = "1,5km away";
+  static const String steviDistanceAway = "3km away";
+
+
 }

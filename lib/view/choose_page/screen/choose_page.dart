@@ -21,7 +21,7 @@ class ChoosePage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [ColorManager.backGround1, ColorManager.backGround2],
+            colors: [ColorManager.backGround1, ColorManager.lightPrimary],
           ),
         ),
         child: Column(

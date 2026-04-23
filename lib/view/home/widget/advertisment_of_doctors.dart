@@ -9,6 +9,10 @@ class AdvertismentOfDoctors extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(AssetsValuesManager.advertismentOfDoctors,);
+    return InkWell(
+        onTap: () {
+          //todo doctors category
+        },
+        child: Image.asset(AssetsValuesManager.advertismentOfDoctors,));
   }
 }
