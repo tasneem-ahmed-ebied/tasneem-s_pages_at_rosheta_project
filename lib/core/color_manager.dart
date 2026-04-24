@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class ColorManager{
   ColorManager._();
   static const Color white = Color(0xffffffff);
+  static const Color overWhite = Color(0xffF2F2F2);
   static const Color primary = Color(0xff2FAEC3);
   static const Color lightPrimary = Color(0xff84DCEA);
   static const Color backGround1 = Color(0xffEAF6FB);

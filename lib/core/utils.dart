@@ -12,6 +12,7 @@ class Utils {
   static const String details = "Details";
   static const String myCart = "My Cart";
   static const String paymentDetails = "Payment Detail";
+  static const String nearestPharmacy = "Nearest Pharmacy ";
 
   ///////////////////////////////////
   static const String search = "search";
@@ -29,6 +30,14 @@ class Utils {
   static const String yourRecentDoctors = "Your Recent Doctors";
   static const String description = "Description";
   static const String buyNow = "Buy Now";
+  static const String uploadPrescription = "Upload Prescription";
+  static const String orderQuickly = "Order quickly with Prescription";
+  static const String viewCategory = "View Category";
+  static const String earlyProtection = "Early protection for your family health";
+  static const String learnMore = "Learn more";
+  static const String confirmLocation = "Confirm Location";
+  static const String locationOfPharmacy = "2640 Cabin Creek Rd #102 Alexandria, Virginia(VA), 22314";
+  static const String confirmYourAddress = "Confirm your address";
 
   ////////////////////////////
   static const String panadol = "Panadol";

@@ -5,16 +5,17 @@ import 'package:tasneem_rosheta/core/height_manager.dart';
 import 'package:tasneem_rosheta/core/radius_manager.dart';
 
 class MainButtonDesign extends StatelessWidget {
-  const MainButtonDesign({super.key, required this.width, required this.text});
+  const MainButtonDesign({super.key, required this.width, required this.text, required this.height});
 final double width;
+final double height;
 final String text;
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: HeightManager.h50,
+      height: height,
       width: width,
-      decoration: BoxDecoration(color: ColorManager.primary,borderRadius: BorderRadius.circular(RadiusValuesManager.r30)),
+      decoration: BoxDecoration(color: ColorManager.primary,borderRadius: BorderRadius.circular(RadiusValuesManager.r15)),
       child: Text(text,style: TextStyle(color: ColorManager.white,fontSize: FontSizeManagers.f15,fontWeight: FontWeight.bold),),
     );
   }

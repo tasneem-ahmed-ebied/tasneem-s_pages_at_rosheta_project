@@ -3,8 +3,6 @@ class AssetsValuesManager{
   static const String _baseUrl = "assets/images";
 
   static const String logo = "$_baseUrl/logo.png";
-  static const String advertismentViewCategory = "$_baseUrl/view_category_image.png";
-  static const String advertismentOfDoctors = "$_baseUrl/learn_more_about_doctors.png";
   ////////////////////////////////////////
   static const String panadolImage = "$_baseUrl/panadol.png";
   static const String bodrexHerbalImage = "$_baseUrl/bodrex_herbal.png";
@@ -14,6 +12,9 @@ class AssetsValuesManager{
   static const String doctorMariaImage = "$_baseUrl/doctor_maria_elena_image.png";
   static const String doctorSteviImage = "$_baseUrl/doctor_stevi_jessi_image.png";
   static const String doctorLukeImage = "$_baseUrl/doctor_luke.png";
+  static const String medicineOfAdvertisment = "$_baseUrl/medicine_of_advertisment.png";
+  static const String doctorOfAdvertisment = "$_baseUrl/doctor_of_advertisment.png";
+  static const String locationImage = "$_baseUrl/location_image.jpg";
 
 
 

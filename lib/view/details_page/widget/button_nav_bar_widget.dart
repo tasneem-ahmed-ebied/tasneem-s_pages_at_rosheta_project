@@ -34,7 +34,7 @@ class ButtonNavBarWidget extends StatelessWidget {
                 onTap: () {
                   AppNavigation.pushReplacementNamed(context, RouteName.cartPage);
                 },
-                child: MainButtonDesign(width: WidthManagers.w252, text: Utils.buyNow))
+                child: MainButtonDesign(width: WidthManagers.w252, text: Utils.buyNow, height: HeightManager.h50,))
           ],
         ),
       ),

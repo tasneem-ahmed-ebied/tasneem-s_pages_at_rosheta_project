@@ -1,10 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:tasneem_rosheta/core/assets_manager.dart';
+import 'package:tasneem_rosheta/core/color_manager.dart';
+import 'package:tasneem_rosheta/core/height_manager.dart';
+import 'package:tasneem_rosheta/core/padding_manager.dart';
+import 'package:tasneem_rosheta/core/radius_manager.dart';
+import 'package:tasneem_rosheta/view/widget/app_bar_widget.dart';
+import 'package:tasneem_rosheta/view/widget/main_button_design.dart';
+import '../../../core/utils.dart';
+import '../widget/container_logo_and_address_section.dart';
+import '../widget/title_of_nearest_pharmacy.dart';
 
 class LocationPage extends StatelessWidget {
   const LocationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: ColorManager.white,
+      appBar: AppBarWidget(title: Utils.nearestPharmacy),
+      body: Container(
+        alignment: Alignment.bottomCenter,
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AssetsValuesManager.locationImage),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: HorizontalPaddingManager.p20,
+            vertical: VerticalPaddingManager.p50,
+          ),
+          child: Container(
+            height: HeightManager.h171,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: ColorManager.overWhite,
+              borderRadius: BorderRadius.circular(RadiusValuesManager.r12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Title
+                TitleOfNearestPharmacy(),
+
+                Divider(thickness: 1, color: ColorManager.semiLightGray),
+
+                // Location Row
+                ContainerLogoAndAddressSection(),
+
+                InkWell(
+                  onTap: () {
+                    //todo check location page or order
+                  },
+                  child: MainButtonDesign(
+                    width: double.infinity,
+                    text: Utils.confirmLocation,
+                    height: HeightManager.h45,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

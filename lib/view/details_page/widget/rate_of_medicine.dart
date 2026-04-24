@@ -25,7 +25,7 @@ class RateOfMedicine extends StatelessWidget {
       allowHalfRating: true,
       itemCount: 5,
       itemSize: 20,
-      unratedColor: Colors.red,
+      unratedColor: ColorManager.semiLightGray,
       itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
       itemBuilder: (context, _) =>
           Icon(Icons.star, color: ColorManager.primary),

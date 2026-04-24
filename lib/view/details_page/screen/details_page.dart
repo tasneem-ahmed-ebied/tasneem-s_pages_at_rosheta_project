@@ -18,11 +18,14 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var r = ModalRoute.of(context)?.settings.arguments;
-    if (r is! PopularProductsModel) {
+    var popularModel = ModalRoute.of(context)?.settings.arguments;
+    ////////
+    if (popularModel is! PopularProductsModel ) {
       return Scaffold(body: Center(child: Text("Not found any product")));
     } else {
-      PopularProductsModel model = r;
+      /////////
+      PopularProductsModel mPopular = popularModel;
+      //////////
       return Scaffold(
         bottomNavigationBar: ButtonNavBarWidget(),
         backgroundColor: ColorManager.white,
@@ -35,20 +38,20 @@ class DetailsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              MedicineImage(image: model.medicineImage),
+              MedicineImage(image: mPopular.medicineImage),
               SizedBox(height: HeightManager.h10),
-              MedicineNameTitle(medicineName: model.medicineName),
+              MedicineNameTitle(medicineName: mPopular.medicineName),
               SizedBox(height: HeightManager.h10),
-              MedicineMlAndFavorite(),
+              MedicineMlAndFavorite(mlMedicine: mPopular.medicinePieces,),
               SizedBox(height: HeightManager.h15),
               RateOfMedicine(
-                initialRating: model.rating,
+                initialRating: mPopular.rating,
                 onRatingUpdate: (double value) {},
               ),
               SizedBox(height: HeightManager.h20),
-              PriceOfMedicineAndCounter(),
+              PriceOfMedicineAndCounter(priceMedicine: mPopular.medicinePrice,),
               SizedBox(height: HeightManager.h20),
-              DescriptionOfMedicine(desc: model.des),
+              DescriptionOfMedicine(desc: mPopular.des),
             ],
           ),
         ),

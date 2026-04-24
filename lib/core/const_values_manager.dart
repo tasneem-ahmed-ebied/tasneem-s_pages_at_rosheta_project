@@ -9,7 +9,6 @@ import 'package:tasneem_rosheta/model/recent_doctors_model.dart';
 
 import '../model/medicine_cart_model.dart';
 import '../model/top_doctors_model.dart';
-import 'navigation/app_navigation.dart';
 
 class ConstValueManager {
   ConstValueManager._();
@@ -90,7 +89,8 @@ class ConstValueManager {
       medicinePieces: Utils.x20pcs,
       medicinePrice: Utils.$15x99,
       olderPrice: Utils.$10x99Before,
-      route: RouteName.detailsPage,
+      route: RouteName.detailsPage, rating: 4,
+      des: 'product des'
     ),
     ProductOnSaleModel(
       medicineImage: AssetsValuesManager.bodrexHerbalImage,
@@ -99,6 +99,8 @@ class ConstValueManager {
       medicinePrice: Utils.$7x99,
       olderPrice: Utils.$8x99Before,
       route: RouteName.detailsPage,
+        rating: 4,
+        des: 'product des'
     ),
     ProductOnSaleModel(
       medicineImage: AssetsValuesManager.konidenImage,
@@ -107,6 +109,8 @@ class ConstValueManager {
       medicinePrice: Utils.$5x99,
       olderPrice: Utils.$7x99Before,
       route: RouteName.detailsPage,
+        rating: 4,
+        des: 'product des'
     ),
   ];
 

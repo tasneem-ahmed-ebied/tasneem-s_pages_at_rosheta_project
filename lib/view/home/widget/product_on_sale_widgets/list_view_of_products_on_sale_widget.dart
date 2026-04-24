@@ -3,6 +3,7 @@ import 'package:tasneem_rosheta/view/home/widget/product_on_sale_widgets/list_vi
 
 import '../../../../core/const_values_manager.dart';
 import '../../../../core/height_manager.dart';
+import '../../../../core/padding_manager.dart';
 import '../../../../core/width_manager.dart';
 
 class ListViewOfProductsOnSaleWidget extends StatelessWidget {
@@ -15,6 +16,10 @@ class ListViewOfProductsOnSaleWidget extends StatelessWidget {
     return SizedBox(
       height: HeightManager.h230,
       child: ListView.separated(
+        padding:  EdgeInsetsGeometry.symmetric(
+          horizontal: HorizontalPaddingManager.p20,
+
+        ),
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: ConstValueManager.listProductsOnSale.length,

@@ -4,11 +4,10 @@ import 'package:tasneem_rosheta/core/icons_size_manager.dart';
 import '../../../controller/count_controller.dart';
 import '../../../core/color_manager.dart';
 import '../../../core/font_manager.dart';
-import '../../../core/utils.dart';
 
 class PriceOfMedicineAndCounter extends StatelessWidget {
-  const PriceOfMedicineAndCounter({super.key});
-
+  const PriceOfMedicineAndCounter({super.key, required this.priceMedicine});
+final String priceMedicine;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +22,7 @@ class PriceOfMedicineAndCounter extends StatelessWidget {
           },
         ),
         Text(
-          Utils.$7x99,
+          priceMedicine,
           style: TextStyle(
             color: ColorManager.black,
             fontSize: FontSizeManagers.f30,

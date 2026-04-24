@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import '../core/route_manager.dart';
 
@@ -9,13 +8,24 @@ class ProductOnSaleModel{
   final String medicinePrice;
   final String olderPrice;
   final RouteName route;
+  final String des;
+
+  final double rating;
 
   ProductOnSaleModel({
     required this.medicineImage,
     required this.medicineName,
     required this.medicinePieces,
     required this.medicinePrice,
-    required this.olderPrice,
-    required this.route
+    required this.route,
+    required this.rating,
+    required this.des,
+    required this.olderPrice
   });
+  @override
+  String toString() {
+    // TODO: implement toString
+    return "medicineName: $medicineName\n"
+        "des : $des";
+  }
 }

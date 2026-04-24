@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import '../../../core/color_manager.dart';
 import '../../../core/font_manager.dart';
 import '../../../core/icons_size_manager.dart';
-import '../../../core/utils.dart';
 
 class MedicineMlAndFavorite extends StatelessWidget {
   const MedicineMlAndFavorite({
-    super.key,
+    super.key, required this.mlMedicine,
   });
-
+final String mlMedicine;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          Utils.x75ml,
+          mlMedicine,
           style: TextStyle(
             color: ColorManager.grey,
             fontSize: FontSizeManagers.f18,
