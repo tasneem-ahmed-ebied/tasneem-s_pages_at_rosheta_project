@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tasneem_rosheta/core/padding_manager.dart';
+import 'package:tasneem_rosheta/model/popular_products_model.dart';
 import 'package:tasneem_rosheta/view/home/widget/product_on_sale_widgets/list_view_of_products_on_sale_widget.dart';
 import '../../../core/color_manager.dart';
 import '../../../core/height_manager.dart';
@@ -28,53 +29,98 @@ class HomePage extends StatelessWidget {
       ),
       backgroundColor: ColorManager.likeWhiteBackground,
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: HorizontalPaddingManager.p20,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: HeightManager.h20),
-              TextFieldSearchHomePage(),
-              SizedBox(height: HeightManager.h20),
-              //main components of app
-              ListViewMainComponents(),
-              //image of advertisment advertisement
-              AdvertismentOfQuickOrders(),
-              //creating list view of popular on sale
-              SizedBox(height: HeightManager.h10),
-              TextTitleOfCategories(title: Utils.popularProduct,),
-              SizedBox(height: HeightManager.h15),
-              ListViewOfPopularMedicineWidget(),
-              //creating list view of products on sale
-              SizedBox(height: HeightManager.h20),
-              TextTitleOfCategories(title: Utils.productOnSale,),
-              SizedBox(height: HeightManager.h15),
-              ListViewOfProductsOnSaleWidget(),
-              //image of advertisment doctors
-              SizedBox(height: HeightManager.h15),
-              TextTitleOfCategories(title: Utils.doctors,),
-              SizedBox(height: HeightManager.h15),
-              AdvertismentOfDoctors(),
-              SizedBox(height: HeightManager.h15),
-              //start at making doctor's place at page
-              TextTitleOfCategories(title: Utils.topDoctors,),
-              SizedBox(height: HeightManager.h15),
-              ListViewOfTopDoctorsWidget(),
-              ////////////////////////////////////
-              SizedBox(height: HeightManager.h15,),
-              TextTitleOfCategories(title: Utils.yourRecentDoctors),
-              SizedBox(height: HeightManager.h15,),
-              ListViewOfRecentDoctorsWidget(),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SearchSection(),
+            //main components of app
+            ListViewMainComponents(),
+            //image of advertisment advertisement
+            AdvertismentOfQuickOrders(),
+            //creating list view of popular on sale
+            PopularProductsSection(), //creating list view of products on sale
+            SizedBox(height: HeightManager.h20),
+            TextTitleOfCategories(title: Utils.productOnSale),
+            SizedBox(height: HeightManager.h15),
+            ListViewOfProductsOnSaleWidget(),
+            //image of advertisment doctors
+            SizedBox(height: HeightManager.h15),
+            TextTitleOfCategories(title: Utils.doctors),
+            SizedBox(height: HeightManager.h15),
+            AdvertismentOfDoctors(),
+            SizedBox(height: HeightManager.h15),
+            //start at making doctor's place at page
+            TextTitleOfCategories(title: Utils.topDoctors),
+            SizedBox(height: HeightManager.h15),
+            ListViewOfTopDoctorsWidget(),
+            ////////////////////////////////////
+            YourDoctorSection(),
+          ],
         ),
       ),
     );
   }
 }
 
+class PopularProductsSection extends StatelessWidget {
+  const PopularProductsSection({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsetsGeometry.symmetric(
+        horizontal: HorizontalPaddingManager.p20,
+      ),
+      child: Column(
+        children: [
+          SizedBox(height: HeightManager.h10),
+          TextTitleOfCategories(title: Utils.popularProduct),
+          SizedBox(height: HeightManager.h15),
+          ListViewOfPopularMedicineWidget(),
+        ],
+      ),
+    );
+  }
+}
 
+class YourDoctorSection extends StatelessWidget {
+  const YourDoctorSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: HeightManager.h15),
+        Padding(
+          padding: EdgeInsetsGeometry.symmetric(
+            horizontal: HorizontalPaddingManager.p20,
+          ),
+          child: TextTitleOfCategories(title: Utils.yourRecentDoctors),
+        ),
+        SizedBox(height: HeightManager.h15),
+        ListViewOfRecentDoctorsWidget(),
+      ],
+    );
+  }
+}
+
+class SearchSection extends StatelessWidget {
+  const SearchSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsetsGeometry.symmetric(
+        horizontal: HorizontalPaddingManager.p20,
+      ),
+      child: Column(
+        children: [
+          SizedBox(height: HeightManager.h20),
+          TextFieldSearchHomePage(),
+          SizedBox(height: HeightManager.h20),
+        ],
+      ),
+    );
+  }
+}

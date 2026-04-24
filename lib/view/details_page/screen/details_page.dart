@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tasneem_rosheta/core/assets_manager.dart';
 import 'package:tasneem_rosheta/core/color_manager.dart';
-import 'package:tasneem_rosheta/core/font_manager.dart';
 import 'package:tasneem_rosheta/core/height_manager.dart';
-import 'package:tasneem_rosheta/core/icons_size_manager.dart';
-import 'package:tasneem_rosheta/core/width_manager.dart';
-
-import '../../../controller/count_controller.dart';
+import 'package:tasneem_rosheta/model/popular_products_model.dart';
 import '../../../core/padding_manager.dart';
 import '../../../core/utils.dart';
 import '../../widget/app_bar_widget.dart';
@@ -23,37 +18,41 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: ButtonNavBarWidget(),
-      backgroundColor: ColorManager.white,
-      appBar: AppBarWidget(title: Utils.details),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: HorizontalPaddingManager.p20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            MedicineImage(),
-            SizedBox(height: HeightManager.h10),
-            MedicineNameTitle(),
-            SizedBox(height: HeightManager.h10),
-            MedicineMlAndFavorite(),
-            SizedBox(height: HeightManager.h15,),
-            RateOfMedicine(),
-            SizedBox(height: HeightManager.h20,),
-            PriceOfMedicineAndCounter(),
-            SizedBox(height: HeightManager.h20,),
-            DescriptionOfMedicine(),
-
-          ],
+    var r = ModalRoute.of(context)?.settings.arguments;
+    if (r is! PopularProductsModel) {
+      return Scaffold(body: Center(child: Text("Not found any product")));
+    } else {
+      PopularProductsModel model = r;
+      return Scaffold(
+        bottomNavigationBar: ButtonNavBarWidget(),
+        backgroundColor: ColorManager.white,
+        appBar: AppBarWidget(title: Utils.details),
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: HorizontalPaddingManager.p20,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MedicineImage(image: model.medicineImage),
+              SizedBox(height: HeightManager.h10),
+              MedicineNameTitle(medicineName: model.medicineName),
+              SizedBox(height: HeightManager.h10),
+              MedicineMlAndFavorite(),
+              SizedBox(height: HeightManager.h15),
+              RateOfMedicine(
+                initialRating: model.rating,
+                onRatingUpdate: (double value) {},
+              ),
+              SizedBox(height: HeightManager.h20),
+              PriceOfMedicineAndCounter(),
+              SizedBox(height: HeightManager.h20),
+              DescriptionOfMedicine(desc: model.des),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
 }
-
-
-
-
-
-

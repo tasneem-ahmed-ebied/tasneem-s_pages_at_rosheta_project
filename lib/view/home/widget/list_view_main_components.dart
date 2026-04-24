@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/const_values_manager.dart';
 import '../../../core/height_manager.dart';
+import '../../../core/padding_manager.dart';
 import '../../../core/width_manager.dart';
 import 'category_page_design.dart';
 
@@ -17,6 +18,9 @@ class ListViewMainComponents extends StatelessWidget {
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
+        padding: EdgeInsetsGeometry.symmetric(
+          horizontal: HorizontalPaddingManager.p20,
+        ),
         itemCount: ConstValueManager.listAllCategories.length,
         separatorBuilder: (context, index) => SizedBox(width: WidthManagers.w20),
         itemBuilder: (context, index) {

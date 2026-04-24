@@ -57,18 +57,26 @@ class ConstValueManager {
       medicinePieces: Utils.x20pcs,
       medicinePrice: Utils.$15x99,
       route: RouteName.detailsPage,
+      des: "desc 1 ",
+      rating: 4.5,
     ),
     PopularProductsModel(
+      des: "desc 1 ",
+      rating: 4.5,
+
       medicineImage: AssetsValuesManager.bodrexHerbalImage,
       medicineName: Utils.bodrexHerbal,
       medicinePieces: Utils.x75ml,
       medicinePrice: Utils.$7x99,
       route: RouteName.detailsPage,
+
     ),
     PopularProductsModel(
       medicineImage: AssetsValuesManager.konidenImage,
       medicineName: Utils.konidin,
       medicinePieces: Utils.x3pcs,
+      des: "desc 1 ",
+      rating: 4.5,
       medicinePrice: Utils.$5x99,
       route: RouteName.detailsPage,
     ),
@@ -82,8 +90,7 @@ class ConstValueManager {
       medicinePieces: Utils.x20pcs,
       medicinePrice: Utils.$15x99,
       olderPrice: Utils.$10x99Before,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
     ProductOnSaleModel(
       medicineImage: AssetsValuesManager.bodrexHerbalImage,
@@ -91,8 +98,7 @@ class ConstValueManager {
       medicinePieces: Utils.x75ml,
       medicinePrice: Utils.$7x99,
       olderPrice: Utils.$8x99Before,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
     ProductOnSaleModel(
       medicineImage: AssetsValuesManager.konidenImage,
@@ -100,8 +106,7 @@ class ConstValueManager {
       medicinePieces: Utils.x3pcs,
       medicinePrice: Utils.$5x99,
       olderPrice: Utils.$7x99Before,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
   ];
 
@@ -113,8 +118,7 @@ class ConstValueManager {
       doctorSpecialty: Utils.marcusSpecialty,
       doctorRate: Utils.marcusRate,
       doctorDistanceAway: Utils.marcusDistanceAway,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
     TopDoctorsModel(
       doctorImage: AssetsValuesManager.doctorMariaImage,
@@ -122,8 +126,7 @@ class ConstValueManager {
       doctorSpecialty: Utils.mariaSpecialty,
       doctorRate: Utils.mariaRate,
       doctorDistanceAway: Utils.marcusDistanceAway,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
     TopDoctorsModel(
       doctorImage: AssetsValuesManager.doctorSteviImage,
@@ -131,8 +134,7 @@ class ConstValueManager {
       doctorSpecialty: Utils.steviSpecialty,
       doctorRate: Utils.steviRate,
       doctorDistanceAway: Utils.steviDistanceAway,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
   ];
 
@@ -141,29 +143,38 @@ class ConstValueManager {
     RecentDoctorModel(
       drImage: AssetsValuesManager.doctorHorizoImage,
       drName: Utils.drMarcusHorizon,
-     route: RouteName.detailsPage
+      route: RouteName.detailsPage,
     ),
     RecentDoctorModel(
       drImage: AssetsValuesManager.doctorMariaImage,
       drName: Utils.drMariaElena,
-        route: RouteName.detailsPage
-
+      route: RouteName.detailsPage,
     ),
     RecentDoctorModel(
       drImage: AssetsValuesManager.doctorLukeImage,
       drName: Utils.drLuke,
-      route: RouteName.detailsPage
+      route: RouteName.detailsPage,
     ),
     RecentDoctorModel(
       drImage: AssetsValuesManager.doctorSteviImage,
       drName: Utils.drSteviJessi,
-      route: RouteName.detailsPage
-  ),
+      route: RouteName.detailsPage,
+    ),
   ];
 
   //////////////////////////////////////////////////
-static List<MedicineCartModel> listMedicineCartModel = [
-MedicineCartModel(medicineImage: AssetsValuesManager.bodrexHerbalImage, medicineName: Utils.bodrexHerbal, medicinePieces: Utils.x75ml, medicinePrice:Utils.$7x99, ),
-MedicineCartModel(medicineImage: AssetsValuesManager.panadolImage, medicineName: Utils.panadol, medicinePieces: Utils.x20pcs, medicinePrice: Utils.$15x99)
-];
+  static List<MedicineCartModel> listMedicineCartModel = [
+    MedicineCartModel(
+      medicineImage: AssetsValuesManager.bodrexHerbalImage,
+      medicineName: Utils.bodrexHerbal,
+      medicinePieces: Utils.x75ml,
+      medicinePrice: Utils.$7x99,
+    ),
+    MedicineCartModel(
+      medicineImage: AssetsValuesManager.panadolImage,
+      medicineName: Utils.panadol,
+      medicinePieces: Utils.x20pcs,
+      medicinePrice: Utils.$15x99,
+    ),
+  ];
 }

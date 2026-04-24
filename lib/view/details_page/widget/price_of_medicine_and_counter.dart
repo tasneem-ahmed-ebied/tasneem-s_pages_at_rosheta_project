@@ -7,9 +7,7 @@ import '../../../core/font_manager.dart';
 import '../../../core/utils.dart';
 
 class PriceOfMedicineAndCounter extends StatelessWidget {
-  const PriceOfMedicineAndCounter({
-    super.key,
-  });
+  const PriceOfMedicineAndCounter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,14 @@ class PriceOfMedicineAndCounter extends StatelessWidget {
             //*the value will change
           },
         ),
-        Text(Utils.$7x99,style: TextStyle(color: ColorManager.black,fontSize: FontSizeManagers.f30,fontWeight: FontWeight.bold),),
+        Text(
+          Utils.$7x99,
+          style: TextStyle(
+            color: ColorManager.black,
+            fontSize: FontSizeManagers.f30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ],
     );
   }

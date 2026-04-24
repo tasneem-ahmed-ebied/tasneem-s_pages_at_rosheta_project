@@ -3,6 +3,7 @@ import 'package:tasneem_rosheta/view/home/widget/product_on_sale_widgets/list_vi
 
 import '../../../../core/const_values_manager.dart';
 import '../../../../core/height_manager.dart';
+import '../../../../core/padding_manager.dart';
 import '../../../../core/width_manager.dart';
 import 'list_view_design_of_recent_doctors.dart';
 
@@ -16,12 +17,16 @@ class ListViewOfRecentDoctorsWidget extends StatelessWidget {
     return SizedBox(
       height: HeightManager.h124,
       child: ListView.separated(
+        padding: EdgeInsetsGeometry.symmetric(
+          horizontal: HorizontalPaddingManager.p20,
+
+        ),
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: ConstValueManager.listRecentDoctors.length,
         separatorBuilder: (context, index) => SizedBox(width: WidthManagers.w20),
         itemBuilder: (context, index) {
-          return ListViewDesignOfRecentDoctors(
+          return ItemRecentDoctor(
             model: ConstValueManager.listRecentDoctors[index],
           );
         },

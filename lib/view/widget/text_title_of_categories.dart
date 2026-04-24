@@ -19,7 +19,7 @@ final String title;
         style: TextStyle(
           color: ColorManager.black,
           fontWeight: FontWeight.bold,
-          fontSize: FontSizeManagers.f20,
+          fontSize: FontSizeManagers.f16,
         ),
       ),
         InkWell(
@@ -31,7 +31,8 @@ final String title;
           style: TextStyle(
             color: ColorManager.primary,
             fontWeight: FontWeight.bold,
-            fontSize: FontSizeManagers.f15,
+            fontSize: FontSizeManagers.f13,
+            decoration: TextDecoration.underline
           ),
                 ),
         ),

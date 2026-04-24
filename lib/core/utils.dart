@@ -1,9 +1,10 @@
 class Utils {
   Utils._();
 
-  static const String continueAsUser = "Continue as\nUser";
+  static const String continueAs= "Continue as";
+  static const String user = "User";
+  static const String pharmacy = "Pharmacy";
   static const String browseAndOrderMedicines = "Browse and order\nmedicines";
-  static const String continueAsPharmacy = "Continue as\nPharmacy";
   static const String manageYourPharmacy = "Manage your\nPharmacy";
 
   /////////////////////////////////

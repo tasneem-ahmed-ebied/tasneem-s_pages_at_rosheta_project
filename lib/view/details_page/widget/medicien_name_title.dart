@@ -6,13 +6,14 @@ import '../../../core/utils.dart';
 
 class MedicineNameTitle extends StatelessWidget {
   const MedicineNameTitle({
-    super.key,
+    super.key, required this.medicineName,
   });
+  final String medicineName;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      Utils.oBHCombi,
+      medicineName,
       style: TextStyle(
         color: ColorManager.black,
         fontWeight: FontWeight.bold,
