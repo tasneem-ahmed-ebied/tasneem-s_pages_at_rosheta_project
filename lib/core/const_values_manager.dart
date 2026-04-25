@@ -3,6 +3,7 @@ import 'package:tasneem_rosheta/core/assets_manager.dart';
 import 'package:tasneem_rosheta/core/route_manager.dart';
 import 'package:tasneem_rosheta/core/utils.dart';
 import 'package:tasneem_rosheta/model/main_components_model.dart';
+import 'package:tasneem_rosheta/model/payment_details_model.dart';
 import 'package:tasneem_rosheta/model/popular_products_model.dart';
 import 'package:tasneem_rosheta/model/product_on_sale_model.dart';
 import 'package:tasneem_rosheta/model/recent_doctors_model.dart';
@@ -180,5 +181,11 @@ class ConstValueManager {
       medicinePieces: Utils.x20pcs,
       medicinePrice: Utils.$15x99,
     ),
+  ];
+  /////////////////////////////////////
+  static List<PaymentDetailsModel> listPaymentDetails = [
+    PaymentDetailsModel(titleDetail: Utils.subTotal, detail: Utils.d$25x99),
+    PaymentDetailsModel(titleDetail: Utils.taxes, detail: Utils.d$1x00),
+    PaymentDetailsModel(titleDetail: Utils.total, detail: Utils.d$26x98),
   ];
 }

@@ -13,7 +13,7 @@ class ListViewOfMedicinesCartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: HeightManager.h210,
+      height: HeightManager.h230,
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.vertical,

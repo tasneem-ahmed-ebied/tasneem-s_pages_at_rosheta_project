@@ -21,6 +21,12 @@ class Utils {
   static const String donates = "Donates";
   static const String efforts = "Efforts";
   static const String doctors = "Doctors";
+  static const String subTotal = "Subtotal";
+  static const String taxes = "Taxes";
+  static const String total = "Total";
+  static const String checkout = "Checkout";
+  static const String visa = "Visa";
+  static const String change = "Change";
 
   //////////////////////////////////
   static const String popularProduct = "Popular Product";
@@ -38,6 +44,7 @@ class Utils {
   static const String confirmLocation = "Confirm Location";
   static const String locationOfPharmacy = "2640 Cabin Creek Rd #102 Alexandria, Virginia(VA), 22314";
   static const String confirmYourAddress = "Confirm your address";
+  static const String paymentMethod = "Payment Method";
 
   ////////////////////////////
   static const String panadol = "Panadol";
@@ -54,11 +61,15 @@ class Utils {
   static final String $15x99 = "\$15.99";
   static const String $7x99 = "\$7.99";
   static const String $5x99 = "\$5.99";
+  static const String d$25x99 = "\$25.98";
+  static const String d$1x00 = "\$1.00";
+  static const String d$26x98 = "\$26.98";
 
   //////////////////////////////////////
   static final String $10x99Before = "\$10.99";
   static const String $8x99Before = "\$8.99";
   static const String $7x99Before = "\$7.99";
+
 
   ///////////////////////////////////
   static const String drMarcusHorizon = "Dr. Marcus Horizon";

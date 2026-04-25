@@ -14,4 +14,5 @@ class ColorManager{
   static const Color semiLightGray = Color(0xffFBFBFB);
   static const Color semiDarkGray = Color(0xffE8F3F1);
   static const Color likeWhiteBackground = Color(0xffFEFEFE);
+  static const Color darkBlue = Color(0xff1A1F71);
 }

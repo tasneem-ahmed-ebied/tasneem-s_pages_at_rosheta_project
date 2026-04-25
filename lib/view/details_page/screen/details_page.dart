@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tasneem_rosheta/core/color_manager.dart';
-import 'package:tasneem_rosheta/core/height_manager.dart';
-import 'package:tasneem_rosheta/model/popular_products_model.dart';
+
+import '../../../core/color_manager.dart';
+import '../../../core/height_manager.dart';
 import '../../../core/padding_manager.dart';
 import '../../../core/utils.dart';
+import '../../../model/popular_products_model.dart';
+import '../../../model/product_on_sale_model.dart';
 import '../../widget/app_bar_widget.dart';
 import '../widget/button_nav_bar_widget.dart';
 import '../widget/description_of_medicine.dart';
@@ -18,44 +20,74 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var popularModel = ModalRoute.of(context)?.settings.arguments;
-    ////////
-    if (popularModel is! PopularProductsModel ) {
-      return Scaffold(body: Center(child: Text("Not found any product")));
-    } else {
-      /////////
-      PopularProductsModel mPopular = popularModel;
-      //////////
-      return Scaffold(
-        bottomNavigationBar: ButtonNavBarWidget(),
-        backgroundColor: ColorManager.white,
-        appBar: AppBarWidget(title: Utils.details),
-        body: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: HorizontalPaddingManager.p20,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MedicineImage(image: mPopular.medicineImage),
-              SizedBox(height: HeightManager.h10),
-              MedicineNameTitle(medicineName: mPopular.medicineName),
-              SizedBox(height: HeightManager.h10),
-              MedicineMlAndFavorite(mlMedicine: mPopular.medicinePieces,),
-              SizedBox(height: HeightManager.h15),
-              RateOfMedicine(
-                initialRating: mPopular.rating,
-                onRatingUpdate: (double value) {},
-              ),
-              SizedBox(height: HeightManager.h20),
-              PriceOfMedicineAndCounter(priceMedicine: mPopular.medicinePrice,),
-              SizedBox(height: HeightManager.h20),
-              DescriptionOfMedicine(desc: mPopular.des),
-            ],
-          ),
-        ),
+    final model = ModalRoute.of(context)?.settings.arguments;
+
+    String image = "";
+    String medicineName = "";
+    String medicinePrice = "";
+    String medicinePieces = "";
+    double rating = 0.0;
+    String description = "";
+
+    if (model is PopularProductsModel) {
+      image = model.medicineImage ?? "";
+      medicineName = model.medicineName ?? "";
+      medicinePrice = model.medicinePrice ?? "";
+      medicinePieces = model.medicinePieces ?? "";
+      rating = model.rating ?? 0.0;
+      description = model.des ?? "";
+    } else if (model is ProductOnSaleModel) {
+      image = model.medicineImage ?? "";
+      medicineName = model.medicineName ?? "";
+      medicinePrice = model.medicinePrice ?? "";
+      medicinePieces = model.medicinePieces ?? "";
+      rating = model.rating ?? 0.0;
+      description = model.des ?? "";
+    }
+
+    if (image.isEmpty) {
+      return const Scaffold(
+        body: Center(child: Text("Not found any product")),
       );
     }
+
+    return Scaffold(
+      bottomNavigationBar: const ButtonNavBarWidget(),
+      backgroundColor: ColorManager.white,
+      appBar: AppBarWidget(title: Utils.details),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: HorizontalPaddingManager.p20,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MedicineImage(image: image),
+            SizedBox(height: HeightManager.h10),
+
+            MedicineNameTitle(medicineName: medicineName),
+            SizedBox(height: HeightManager.h10),
+
+            MedicineMlAndFavorite(
+              mlMedicine: medicinePieces,
+            ),
+            SizedBox(height: HeightManager.h15),
+
+            RateOfMedicine(
+              initialRating: rating,
+              onRatingUpdate: (double value) {},
+            ),
+            SizedBox(height: HeightManager.h20),
+
+            PriceOfMedicineAndCounter(
+              priceMedicine: medicinePrice,
+            ),
+            SizedBox(height: HeightManager.h20),
+
+            DescriptionOfMedicine(desc: description),
+          ],
+        ),
+      ),
+    );
   }
 }
