@@ -12,11 +12,12 @@ class CounterControl extends StatefulWidget {
   const CounterControl({super.key, this.initialValue = 0, this.onChanged, required this.iconSize, required this.numberSize});
 
   @override
-  _CounterControlState createState() => _CounterControlState();
+  CounterControlState createState() => CounterControlState();
 }
 
-class _CounterControlState extends State<CounterControl> {
-  late int count;
+class CounterControlState extends State<CounterControl> {
+   int count = 1;
+  int defult = 1;
 
   @override
   void initState() {
@@ -32,7 +33,7 @@ class _CounterControlState extends State<CounterControl> {
   }
 
   void decrement() {
-    if (count > 0) {
+    if (count > defult) {
       setState(() {
         count--;
       });

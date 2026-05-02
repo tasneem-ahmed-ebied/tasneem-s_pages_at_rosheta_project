@@ -17,29 +17,26 @@ class ButtonNavBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: Padding(
-        padding: EdgeInsetsGeometry.all(PaddingManager.p20),
-        child: SizedBox(
-          height: HeightManager.h50,
-          child: Row(
-            children: [
-              Container(
-                height: HeightManager.h50,
-                width: WidthManagers.w50,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(color: ColorManager.lightBlue,borderRadius: BorderRadius.circular(RadiusValuesManager.r12)),
-                child: Icon(CupertinoIcons.cart,size: IconSizeManager.i25,),
-              ),
-              SizedBox(width: WidthManagers.w17,),
-              InkWell(
-                  onTap: () {
-                    AppNavigation.pushReplacementNamed(context, RouteName.cartPage);
-                  },
-                  child: MainButtonDesign(width: WidthManagers.w252, text: Utils.buyNow, height: HeightManager.h50,))
-            ],
-          ),
+    return Padding(
+      padding: EdgeInsetsGeometry.all(PaddingManager.p20),
+      child: SizedBox(
+        height: HeightManager.h50,
+        child: Row(
+          children: [
+            Container(
+              height: HeightManager.h50,
+              width: WidthManagers.w50,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(color: ColorManager.lightBlue,borderRadius: BorderRadius.circular(RadiusValuesManager.r12)),
+              child: Icon(CupertinoIcons.cart,size: IconSizeManager.i25,),
+            ),
+            SizedBox(width: WidthManagers.w17,),
+            InkWell(
+                onTap: () {
+                  AppNavigation.pushReplacementNamed(context, RouteName.cartPage);
+                },
+                child: MainButtonDesign(width: WidthManagers.w252, text: Utils.buyNow, height: HeightManager.h50,))
+          ],
         ),
       ),
     );
