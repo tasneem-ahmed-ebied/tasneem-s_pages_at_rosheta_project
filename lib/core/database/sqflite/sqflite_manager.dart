@@ -41,10 +41,6 @@ class SqfliteManage extends CRUD {
     return db;
   }
 
-  void _openDb() {
-    createDb();
-  }
-
   FutureOr<void> _onConfigureDB(db) async {
     await db.execute("PRAGMA foreign_keys = ON");
   }
@@ -144,16 +140,84 @@ class SqfliteManage extends CRUD {
     return deleted > 0 ? true : false;
   }
 
+  _closeDb(Database? db) {
+    if (db?.isOpen ?? false) {
+      db?.close();
+    }
+  }
+
   //////////////////////////////////////////////
   @override
-  Future<void> read() {
-    // TODO: implement read
-    throw UnimplementedError();
+  Future<List<Map<String, Object?>>> read({required String tableName}) async {
+    Database? db;
+    List<Map<String, Object?>> data = [];
+    try {
+      // open db
+      db = await createDb();
+      //query
+      data = await db.rawQuery('SELECT * FROM $tableName');
+
+      // close db
+    } catch (e) {
+      // close db
+      print("error while deleting $e");
+    } finally {
+      _closeDb(db);
+    }
+    return data;
   }
 
   @override
-  Future<void> update() {
-    // TODO: implement update
-    throw UnimplementedError();
+  Future<List<Map<String, Object?>>> readByCondition({
+    required String query,
+  }) async {
+    Database? db;
+    List<Map<String, Object?>> data = [];
+    try {
+      // open db
+      db = await createDb();
+      //query
+      data = await db.rawQuery(query);
+
+      // close db
+    } catch (e) {
+      // close db
+      print("error while query $e");
+    } finally {
+      _closeDb(db);
+    }
+    return data;
+  }
+
+  @override
+  Future<bool> update({
+    required String tableName,
+    required Map<String, Object?> values,
+    required String where,
+    required String whereArgs,
+  }) async {
+    Database? db;
+    int updated = -1;
+    try {
+      // open db
+      db = await createDb();
+
+      //query
+      updated = await db.update(
+        tableName,
+        values,
+        where: "$where = ?",
+        whereArgs: [whereArgs],
+      );
+
+      // close db
+    } catch (e) {
+      // close db
+      print("error while update $e");
+      updated = -1;
+    } finally {
+      _closeDb(db);
+    }
+    return updated > 0 ? true : false;
   }
 }
